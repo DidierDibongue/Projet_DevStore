@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard'; // Import du sous-composant
 
-export default function Catalog() {
+export default function Catalog({ onAddToCart })  {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +26,11 @@ export default function Catalog() {
       <h1>Catalogue DevStore 📦</h1>
       <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
         {products.map(product => (
-          <ProductCard key={product._id || product.id} product={product} />
+          <ProductCard
+  key={product._id || product.id}
+  product={product}
+  onAddToCart={onAddToCart}
+/>
         ))}
       </div>
     </div>
