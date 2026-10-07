@@ -15,17 +15,33 @@ export default function ProductCard({ product, onAddToCart }) {
       <img
         src={product.image}
         alt={product.nom}
-        style={{ width: '100%', borderRadius: '4px' }}
+        style={{
+          width: '100%',
+          borderRadius: '4px'
+        }}
       />
 
       <h3>{product.nom}</h3>
 
-      <p style={{ fontWeight: 'bold', color: '#0052CC' }}>
+      <p
+        style={{
+          fontWeight: 'bold',
+          color: '#0052CC'
+        }}
+      >
         {product.prix}
       </p>
 
       <button
-onClick={() => onAddToCart(product)}
+        onClick={() => onAddToCart(product)}
+        style={{
+          backgroundColor: '#0052CC',
+          color: 'white',
+          border: 'none',
+          padding: '8px 12px',
+          borderRadius: '4px',
+          cursor: 'pointer'
+        }}
       >
         Ajouter au panier
       </button>
